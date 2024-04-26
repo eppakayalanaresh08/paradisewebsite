@@ -33,7 +33,10 @@ function App() {
 
       <div className="App App-container">
         <div className="top-logo-container">
+          <div>
           <img src={Logo} alt='logoparadise' className="image-Element" />
+          <h2 className="logo-heading">Fabulous Fairies</h2>
+          </div>
           <div className="search-product-container">
           <div className="searchinputContainer">
           <div className="input-container">

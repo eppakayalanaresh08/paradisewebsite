@@ -1,41 +1,43 @@
 .imageElementproduct{
-  height:300px;
-  Width:300px;
-  border-radius: 150px;
-}
-
-.CategorybgContainer{
-    background-image: url('../../images/BgColor.jpg');
-    background-size: cover;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:100vw;
-    
-}
-
-.categorycontainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width:70vw;
-    flex-wrap: wrap;
-
-}
-
-.eachContainer{
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: center;
-    align-items: center;
-    margin: 20px;;
-}
-
-.nameElementcategory{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-}
+    height:300px;
+    Width:300px;
+    border-radius: 150px;
+  }
+  
+  .CategorybgContainer{
+      background-image: url('../../images/BgColor.jpg');
+      background-size: cover;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:100%;
+      
+  }
+  
+  .categorycontainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width:70vw;
+      flex-wrap: wrap;
+  
+  }
+  
+  .eachContainer{
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: center;
+      align-items: center;
+      margin: 20px;;
+  }
+  
+  .nameElementcategory{
+      font-size: 30px;
+      font-weight: bold;
+      font-family: sans-serif;
+      
+  }
