@@ -8,14 +8,28 @@
       background-image: url('../../images/BgColor.jpg');
       background-size: cover;
       display: flex;
-      min-height: 100vh;
+      min-height: 120vh;
       width:100vw;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width:100%;
+  
       
   }
+
+
+  .categorycontainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 800px;
+      margin-top: 100px;
+      flex-wrap: wrap;
+      width:80vw;
+  
+  }
+
 
   @media screen and (max-width:768px){
     .CategorybgContainer{
@@ -25,17 +39,12 @@
         /* min-height: 100vh; */
         min-width:300vw;
     }
-  }
-  
-  .categorycontainer{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
 
-      flex-wrap: wrap;
-  
+    .categorycontainer{
+        width:240vw;
+    }
   }
+  
   
   .eachContainer{
       display: flex;

@@ -85,12 +85,26 @@ background-image: linear-gradient(#196417,#7fe17e);
 
 }
 
+.inputElement{
+  width:630px;
+  height:50px;
+  border:none;
+  background-color:transparent;
+  outline: none;
+  padding-left: 5px;
+  font-size: 19px;
+  
+
+}
+
+
 @media screen and (max-width:768px){
   .input-container{
     width:450px;
 
   }
 }
+
 
 .top-logo-container{
   display: flex;
@@ -105,17 +119,6 @@ background-image: linear-gradient(#196417,#7fe17e);
   border-radius: 150px;
 }
 
-.inputElement{
-  width:630px;
-  height:50px;
-  border:none;
-  background-color:transparent;
-  outline: none;
-  padding-left: 5px;
-  font-size: 19px;
-  
-
-}
 
 .buttonElement{
   background-image: linear-gradient(to right, #1369e2,#9fc1ee);
@@ -165,6 +168,27 @@ background-image: linear-gradient(#196417,#7fe17e);
 
   }
 }
+
+
+@media screen and (max-width:1024px){
+  .input-container{
+    width:850px;
+
+  }
+  .inputElement{
+    width:800px;
+
+    
+  }
+  .nameCategorysContainer{
+    width:90vw;
+
+  }
+}
+
+
+
+
 
 .nameCategory{
   text-decoration: none;
@@ -225,9 +249,22 @@ background-image: linear-gradient(#196417,#7fe17e);
     margin: 10px;
     min-width:100px;
   }
+
+  .containerHomeIcon{
+    margin-top: 40px;
+  }
+ 
+
+  
 }
 
+
+
 .logo-heading{
-  font-family:  sans-serif;
-  margin: 5px;
+  /* font-family:  sans-serif; */
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;;
+  margin: 20px;
+  color: #0a0c0a;
 }
