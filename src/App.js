@@ -33,7 +33,7 @@ function App() {
 
       <div className="App App-container">
         <div className="top-logo-container">
-          <div>
+          <div className='logo-container-image'>
             <img src={Logo} alt='logoparadise' className="image-Element" />
             <h2 className="logo-heading">Fabulous Fairies</h2>
           </div>
