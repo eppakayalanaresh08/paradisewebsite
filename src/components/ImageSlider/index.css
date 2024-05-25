@@ -19,3 +19,14 @@
 .slick-next:before{
   font-size: 43px;
 }
+
+@media screen and (max-width:767px){
+  .slick-prev:before{
+    font-size: 0px;
+  }
+  
+  .slick-next:before{
+    font-size: 0px;
+  }
+  
+}
