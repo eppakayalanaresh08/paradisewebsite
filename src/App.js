@@ -6,7 +6,9 @@ import dandelion from "./images/dandelion.jpg";
 import lighthouseImg from "./images/lighthouse.jpg";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Category from "./components/Category";
-import Logo from './images/logo.jpg'
+import Logo from './images/logo.jpg';
+import OrganicPersonalCare from "./components/OrganicPersonalCare";
+import ResinCalculator from "./components/ResinCalculator";
 
 
 function App() {
@@ -29,8 +31,6 @@ function App() {
 
   return (
     <Router>
-
-
       <div className="App App-container">
         <div className="top-logo-container">
           <div className='logo-container-image'>
@@ -42,7 +42,8 @@ function App() {
               <div className="input-container">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                </svg>          <input type="text" className="inputElement" />
+                </svg>
+                <input type="text" className="inputElement" />
               </div>
               <button className="buttonElement">Search</button>
             </div>
@@ -53,25 +54,25 @@ function App() {
                 </svg>
               </div>
               <div className='nameCategorysContainer'>
-                <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                  <p className='nameCategory'>ViewProduct</p>
-                </Link>
-                <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                  <p className='nameCategory'>New Arrival</p>
-                </Link>
-                <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                  <p className='nameCategory'>Workshop</p>
-                </Link>
-                <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                  <p className='nameCategory'>Any Queries</p>
-                </Link>
-                <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                  <p className='nameCategory'>Resin Calculator</p>
-                </Link>
+                    <Link className='nameElement' to="/">
+                      <p className='nameCategory'>View Product</p>
+                    </Link>
+                    <Link className='nameElement' onClick={() => scrollToSection('Category')}>
+                      <p className='nameCategory'>New Arrival</p>
+                    </Link>
+                    <Link className='nameElement' onClick={() => scrollToSection('Category')}>
+                      <p className='nameCategory'>Workshop</p>
+                    </Link>
+                    <Link className='nameElement' onClick={() => scrollToSection('Category')}>
+                      <p className='nameCategory'>Any Queries</p>
+                    </Link>
+                    <Link className='nameElement' to="/ResinCalculator">
+                      <p className='nameCategory'>Resin Calculator</p>
+                    </Link>
+                
               </div>
             </div>
           </div>
-
         </div>
         <div className="silderContainer">
           <ImageSlider images={images} />
@@ -79,15 +80,11 @@ function App() {
       </div>
 
       <Routes>
-
-
         <Route path="/" element={<Category />} />
-
+        <Route path="/organicpersonalcare" element={<OrganicPersonalCare/>} />
+        <Route path="/ResinCalculator" element={<ResinCalculator/>} />
       </Routes>
-
-
     </Router>
-
   );
 }
 
