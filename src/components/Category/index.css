@@ -37,6 +37,8 @@
       justify-content: center;
       align-items: center;
       margin: 20px;;
+      cursor: pointer;
+
   }
   
 
@@ -50,6 +52,7 @@
       font-size: 30px;
       font-weight: bold;
       font-family: sans-serif;
+      background-color: transparent;
       
   }
 
@@ -83,6 +86,13 @@
     }
     .nameElementcategory{
         text-align: center;
+    
         font-size: 10px;
     }
+  }
+
+  .buttoneachImage{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
   }

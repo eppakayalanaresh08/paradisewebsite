@@ -5,6 +5,8 @@ import image3 from '../../images/Category3.jpg'
 import image4 from '../../images/Category4.jpg'
 import image5 from '../../images/Category5.jpg'
 import image6 from '../../images/Category6.jpg'
+import { useNavigate } from 'react-router-dom';
+
 import './index.css'
 
 const Product = [
@@ -16,15 +18,25 @@ const Product = [
     {image: image6 , id:6, name:'Landury & Cleaning'}
 ]
 
-function Category() {
+function Category() { 
+     const navigate = useNavigate();
+
+     const handleeachProduct=()=>{
+        navigate('/AllProducts');
+     }
+
     return (
         <div className='CategorybgContainer' id='Category'>
             <div className='categorycontainer'>
             {Product.map((item) => (
-            <div key={item.id} className='eachContainer'>
+                                // <button onClick={handleeachProduct} className='buttoneachImage'>
+
+            <div key={item.id} className='eachContainer' onClick={handleeachProduct}>
                 <img src={item.image} alt='category' className='imageElementproduct' />
                 <p className='nameElementcategory'>{item.name}</p>
             </div>
+            // </button>
+
         ))}
         </div>
 
