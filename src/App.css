@@ -51,6 +51,7 @@
   background-image: linear-gradient(); */
   /* width: 100%; */
   box-sizing: border-box;
+  background-repeat: repeat;
 }
 
 @media screen and (min-width: 767px) {
