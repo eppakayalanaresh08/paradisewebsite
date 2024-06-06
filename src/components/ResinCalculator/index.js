@@ -139,8 +139,8 @@ function ResinCalculator() {
                 </div>
                 <div className={activeMesurements.length > 0 ? "active" : "inactive"}>
                     <p>Total Tulsi Resin Required</p>
-                    <h1>Total: <span> <span>{activeTotal.total}</span> Grams or <span>{activeTotal.total / 1000} Kg's</span></span></h1>
-                    <h1>Resin: <span><span>{activeTotal.resin}</span>Gm and Hardener: <span>{activeTotal.hardener}</span></span></h1>
+                    <h1>Total: <span> <span>{Number((activeTotal.total).toFixed(3))}</span> Grams or <span>{Number((activeTotal.total / 1000).toFixed(3))} Kg's</span></span></h1>
+                    <h1>Resin: <span><span>{Number((activeTotal.resin).toFixed(3))}</span>Gm and Hardener: <span>{Number((activeTotal.hardener).toFixed(3))}Gm</span></span></h1>
                 </div>
             </div>
         </div>

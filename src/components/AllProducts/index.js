@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './index.css'
 
 function AllProducts() {
 
@@ -18,7 +19,7 @@ function AllProducts() {
   ] 
 
   return (
-    <div>
+    <div className="product-container">
       {imagearray.map((item) => (
         <div key={item.id} className="product">
           <img src={item.image} alt={item.name} className="product-image" />
