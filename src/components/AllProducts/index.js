@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from "../Footer";
 import './index.css'
 
 function AllProducts() {
@@ -19,19 +20,23 @@ function AllProducts() {
   ] 
 
   return (
-    <div className="product-container">
-      {imagearray.map((item) => (
-        <div key={item.id} className="product">
-          <img src={item.image} alt={item.name} className="product-image" />
-          <div className="product-details">
-            <h2 className="product-name">{item.name}</h2>
-            <p className="product-price">Discounted Price: ${item.disprice}</p>
-            <p className="product-original-price">Original Price: ${item.price}</p>
-            <p className="product-rating">Rating: {item.rating} stars</p>
+    <>    
+      <div className="product-container">
+        {imagearray.map((item) => (
+          <div key={item.id} className="product">
+            <img src={item.image} alt={item.name} className="product-image" />
+            <div className="product-details">
+              <h2 className="product-name">{item.name}</h2>
+              <p className="product-price">Discounted Price: ${item.disprice}</p>
+              <p className="product-original-price">Original Price: ${item.price}</p>
+              <p className="product-rating">Rating: {item.rating} stars</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <Footer />
+    </>
+
   )
 }
 

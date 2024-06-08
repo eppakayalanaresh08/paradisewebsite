@@ -19,14 +19,16 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div className="image-slider">
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Slide ${index}`} />
-          </div>
-        ))}
-      </Slider>
+    <div>    
+      <div className="image-slider">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`Slide ${index}`} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

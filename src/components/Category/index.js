@@ -6,6 +6,8 @@ import image4 from '../../images/Category4.jpg'
 import image5 from '../../images/Category5.jpg'
 import image6 from '../../images/Category6.jpg'
 import { useNavigate } from 'react-router-dom';
+import Footer from "../Footer";
+
 
 import './index.css'
 
@@ -26,21 +28,21 @@ function Category() {
      }
 
     return (
-        <div className='CategorybgContainer' id='Category'>
-            <div className='categorycontainer'>
-            {Product.map((item) => (
-                                // <button onClick={handleeachProduct} className='buttoneachImage'>
-
-            <div key={item.id} className='eachContainer' onClick={handleeachProduct}>
-                <img src={item.image} alt='category' className='imageElementproduct' />
-                <p className='nameElementcategory'>{item.name}</p>
+        <>
+            <div className='CategorybgContainer' id='Category'>
+                <div className='categorycontainer'>
+                    {Product.map((item) => (
+                    // <button onClick={handleeachProduct} className='buttoneachImage'>
+                    <div key={item.id} className='eachContainer' onClick={handleeachProduct}>
+                        <img src={item.image} alt='category' className='imageElementproduct' />
+                        <p className='nameElementcategory'>{item.name}</p>
+                    </div>
+                    // </button>
+                ))}
+                </div>
             </div>
-            // </button>
-
-        ))}
-        </div>
-
-        </div>
+            <Footer />
+        </>
     )
 }
 

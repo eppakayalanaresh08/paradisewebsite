@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./index.css";
+import Footer from "../Footer";
 import { useState } from "react";
 
 function ResinCalculator() {
@@ -9,6 +10,8 @@ function ResinCalculator() {
     const [activeMesurements, setActiveMeasturemnts] = useState({ length: "", breadth: "", thickness: "", diameter: ""});
 
     const [activeTotal, setActiveTotal] = useState({total: 0, resin: 0, hardener: 0, cost: 0});
+
+    // const [activeDiameter, setActiveDiameter] = usestate({})
 
     const onClickShape = (index) =>{
         setaActiveState(prevState => ({
@@ -143,6 +146,8 @@ function ResinCalculator() {
                     <h1>Resin: <span><span>{Number((activeTotal.resin).toFixed(3))}</span>Gm and Hardener: <span>{Number((activeTotal.hardener).toFixed(3))}Gm</span></span></h1>
                 </div>
             </div>
+            <Footer />
+
         </div>
     )
 }
