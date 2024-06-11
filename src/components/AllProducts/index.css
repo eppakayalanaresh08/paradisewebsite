@@ -11,5 +11,7 @@
   .product-container{
     display: flex;
     flex-wrap: wrap;
+    padding: 15px;
+    padding-bottom: 50px;
   }
   

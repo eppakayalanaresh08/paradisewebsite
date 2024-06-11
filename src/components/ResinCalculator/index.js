@@ -87,6 +87,12 @@ function ResinCalculator() {
         })
     },[activeMesurements.length, activeMesurements.breadth, activeIndex.ratio])
     
+    // useEffect(() =>{
+    //     setActiveTotal(prevState => {
+            
+    //     })
+    // },[activeMesurements.thickness, activeMesurements.diameter])
+
     console.log(activeTotal);
     return (
         <div className="conatainer">

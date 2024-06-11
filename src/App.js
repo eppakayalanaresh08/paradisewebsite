@@ -35,7 +35,7 @@ function App() {
       <div className="top-logo-container">
         <div className='logo-container-image'>
           <img src={Logo} alt='logoparadise' className="image-Element" />
-          <h2 className="logo-heading">Fabulous Fairies</h2>
+          <h2 className="logo-heading">Paradise</h2>
         </div>
         <div className="search-product-container">
           <div className="searchinputContainer">
@@ -91,7 +91,6 @@ function App() {
     </div>
   );
 }
-
 
 function MainApp() {
 
