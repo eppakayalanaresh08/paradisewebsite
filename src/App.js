@@ -1,25 +1,28 @@
-import "./App.css";
-
-import ImageSlider from "./components/ImageSlider";
-// import flowerImg from './images/flower.jpg'
-import dandelion from "./images/dandelion.jpg";
-import lighthouseImg from "./images/lighthouse.jpg";
-import { BrowserRouter as Router, Routes, Route, Link,useLocation} from 'react-router-dom';
-import Category from "./components/Category";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import ImageSlider from './components/ImageSlider';
+import Category from './components/Category';
+import OrganicPersonalCare from './components/OrganicPersonalCare';
+import ResinCalculator from './components/ResinCalculator';
+import AllProducts from './components/AllProducts';
+import Cart from './components/Cart';
+import Footer from './components/Footer';
 import Logo from './images/logo.jpg';
-import OrganicPersonalCare from "./components/OrganicPersonalCare";
-import ResinCalculator from "./components/ResinCalculator";
-import AllProducts from "./components/AllProducts";
-import Footer from "./components/Footer";
+import dandelion from './images/dandelion.jpg';
+import lighthouseImg from './images/lighthouse.jpg';
+import './App.css';
 
 function App() {
-  const images = [
-    lighthouseImg,
-    dandelion,
-    lighthouseImg,
-    dandelion,
-    lighthouseImg,
-  ];
+  const [cart, setCart] = useState([]);
+  const images = [lighthouseImg, dandelion, lighthouseImg, dandelion, lighthouseImg];
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -33,8 +36,8 @@ function App() {
   return (
     <div className="App App-container">
       <div className="top-logo-container">
-        <div className='logo-container-image'>
-          <img src={Logo} alt='logoparadise' className="image-Element" />
+        <div className="logo-container-image">
+          <img src={Logo} alt="logoparadise" className="image-Element" />
           <h2 className="logo-heading">Paradise</h2>
         </div>
         <div className="search-product-container">
@@ -48,26 +51,29 @@ function App() {
             <button className="buttonElement">Search</button>
           </div>
           <div className="homeproductcontainer">
-            <div className='containerHomeIcon'>
+            <div className="containerHomeIcon">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-house-door" viewBox="0 0 16 16">
                 <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
               </svg>
             </div>
-            <div className='nameCategorysContainer'>
-              <Link className='nameElement' to="/">
-                <p className='nameCategory'>View Product</p>
+            <div className="nameCategorysContainer">
+              <Link className="nameElement" to="/">
+                <p className="nameCategory">View Product</p>
               </Link>
-              <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                <p className='nameCategory'>New Arrival</p>
+              <Link className="nameElement" onClick={() => scrollToSection('Category')}>
+                <p className="nameCategory">New Arrival</p>
               </Link>
-              <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                <p className='nameCategory'>Workshop</p>
+              <Link className="nameElement" onClick={() => scrollToSection('Category')}>
+                <p className="nameCategory">Workshop</p>
               </Link>
-              <Link className='nameElement' onClick={() => scrollToSection('Category')}>
-                <p className='nameCategory'>Any Queries</p>
+              <Link className="nameElement" onClick={() => scrollToSection('Category')}>
+                <p className="nameCategory">Any Queries</p>
               </Link>
-              <Link className='nameElement' to="/ResinCalculator">
-                <p className='nameCategory'>Resin Calculator</p>
+              <Link className="nameElement" to="/ResinCalculator">
+                <p className="nameCategory">Resin Calculator</p>
+              </Link>
+              <Link className="nameElement" to="/cart">
+                <p className="nameCategory">Cart ({cart.length})</p>
               </Link>
             </div>
           </div>
@@ -83,17 +89,15 @@ function App() {
         <Route path="/" element={<Category />} />
         <Route path="/organicpersonalcare" element={<OrganicPersonalCare />} />
         <Route path="/ResinCalculator" element={<ResinCalculator />} />
-        <Route path="/AllProducts" element={<AllProducts />} />
-        <Route element={<Footer />} />
+        <Route path="/AllProducts" element={<AllProducts addToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart cartItems={cart} onRemoveItem={removeFromCart} />} />
       </Routes>
-        
-      
+      <Footer />
     </div>
   );
 }
 
 function MainApp() {
-
   return (
     <Router>
       <App />

@@ -278,17 +278,12 @@
     font-size: 15px;
     /* padding:1px; */
     margin-left: 10px;
-
   }
 
   .homeproductcontainer {
     display: flex;
     flex-direction: row;
      margin-bottom: 20px;
-  
-
-
-  
   }
 
   .containerHomeIcon {
