@@ -1,4 +1,4 @@
-.footer-container{
+/* .footer-container{
   background-color: #8aba89de;
 }
 
@@ -44,4 +44,106 @@
 }
 .footer-container{
   padding: 50px;
+} */
+
+/* Default styles */
+.footer-container {
+  background-color: #8aba89de;
+  padding: 50px;
+}
+
+.footer-logo {
+  height: 80px;
+  width: 80px;
+}
+
+.facebook, .icons-div-card a {
+  width: 45px;
+  height: 45px;
+}
+
+.icons-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card {
+  display: flex;
+  gap: 25px;
+}
+
+.detail-div {
+  display: flex;
+  gap: 100px;
+}
+
+.hadvalue-card {
+  display: flex;
+  gap: 108px;
+}
+
+.about-card2 {
+  width: 100%;
+}
+
+.about-container {
+  width: 34%;
+}
+
+.icons-div-card {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-div2 {
+  gap: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .detail-div {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .about-container {
+      width: 100%;
+  }
+
+  .icons-div-card {
+      justify-content: center;
+  }
+
+  .contact-div2 {
+      flex-direction: column;
+      gap: 30px;
+      align-items: flex-start;
+  }
+
+  .hadvalue-card {
+      flex-wrap: wrap;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+      padding: 30px;
+  }
+
+  .footer-logo {
+      height: 60px;
+      width: 60px;
+  }
+
+  .facebook, .icons-div-card a {
+      width: 40px;
+      height: 40px;
+  }
+
+  .hadvalue-card {
+      gap: 20px;
+  }
 }

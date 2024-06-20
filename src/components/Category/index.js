@@ -6,7 +6,6 @@ import image4 from '../../images/Category4.jpg'
 import image5 from '../../images/Category5.jpg'
 import image6 from '../../images/Category6.jpg'
 import { useNavigate } from 'react-router-dom';
-import Footer from "../Footer";
 
 
 import './index.css'
@@ -41,7 +40,6 @@ function Category() {
                 ))}
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

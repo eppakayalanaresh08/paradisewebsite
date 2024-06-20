@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Footer';
 import './index.css';
 
 function AllProducts({ addToCart }) {
@@ -34,7 +33,6 @@ function AllProducts({ addToCart }) {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 }

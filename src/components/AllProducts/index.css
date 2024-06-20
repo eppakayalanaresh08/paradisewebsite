@@ -1,17 +1,29 @@
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  padding-bottom: 50px;
+  padding:20px;
+
+}
+
+
 .product {
-    width: 200px;
-    height: 370px;
-  }
-  
-  .product-image {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .product-container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
-    padding-bottom: 50px;
-  }
-  
+  width: 300px;
+  height: 380px;
+  margin: 60px;
+
+}
+
+.product-image {
+  width: 180px;
+  height: 180px;
+
+}
+
+
+.product-rating{
+  margin-bottom: 10px;
+}
+
+

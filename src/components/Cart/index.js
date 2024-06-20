@@ -5,14 +5,14 @@ const Cart = ({ cartItems, onRemoveItem }) => {
   const totalPrice = cartItems.reduce((total, item) => total + item.disprice, 0);
 
   return (
-    <div className="cart-container">
+    <div className="cart-container-bg">
       <h2>Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <>
           {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
+            <div key={item.id} className="cart-item-each">
               <img src={item.image} alt={item.name} className="cart-item-image" />
               <div className="cart-item-details">
                 <h3>{item.name}</h3>

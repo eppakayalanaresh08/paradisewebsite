@@ -1,9 +1,10 @@
-.cart-container {
+.cart-container-bg{
     padding: 20px;
   }
   
-  .cart-item {
+  .cart-item-each {
     display: flex;
+    flex-direction: row;
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
