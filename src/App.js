@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import ImageSlider from './components/ImageSlider';
 import Category from './components/Category';
 import OrganicPersonalCare from './components/OrganicPersonalCare';
 import ResinCalculator from './components/ResinCalculator';
 import AllProducts from './components/AllProducts';
 import Cart from './components/Cart';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 import Footer from './components/Footer';
 import Logo from './images/logo.jpg';
 import dandelion from './images/dandelion.jpg';
@@ -13,6 +15,8 @@ import lighthouseImg from './images/lighthouse.jpg';
 import './App.css';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const images = [lighthouseImg, dandelion, lighthouseImg, dandelion, lighthouseImg];
 
@@ -21,19 +25,26 @@ function App() {
   const [isShaking, setIsShaking] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
+
+  
   
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
-    setIsAnimating(true);
-    setTimeout(() => {
-      setIsAnimating(false);
-      setCartItemsg(cartItemstg + 1);
-      setIsShaking(true);
+    if (!isAuthenticated) {
+      navigate('/signin');
+    } else {
+      setCart([...cart, item]);
+      setIsAnimating(true);
       setTimeout(() => {
-        setIsShaking(false);
-      }, 500);
-    }, 1000);
+        setIsAnimating(false);
+        setCartItemsg(cartItemstg + 1);
+        setIsShaking(true);
+        setTimeout(() => {
+          setIsShaking(false);
+        }, 500);
+      }, 1000);
+    }
+    setIsAuthenticated()
   };
 
   const removeFromCart = (id) => {
@@ -136,6 +147,8 @@ function App() {
         <Route path="/ResinCalculator" element={<ResinCalculator />} />
         <Route path="/AllProducts" element={<AllProducts addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cart} onRemoveItem={removeFromCart} />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
       </Routes>
       <Footer />
     </div>
